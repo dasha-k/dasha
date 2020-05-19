@@ -1,0 +1,27 @@
+{
+    "title": "Latest Projects",
+    "projects": [
+        {
+            "name": "Shopify app",
+            "image": "shopifyApp",
+            "tech": ["react", "graphql"],
+            "buttonLabel": "View listing",
+            "buttonLink": "https://apps.shopify.com/mighty-metafields?surface_detail=metfields&surface_inter_position=1&surface_intra_position=18&surface_type=search"
+        },
+        {
+            "name": "Interactive camera simulator",
+            "image": "cameraSimulator",
+            "tech": ["react", "redux"],
+            "buttonLabel": "View project",
+            "buttonLink": "https://www.usa.canon.com/internet/portal/us/home/learn/interactive-simulators",
+            "comment": "* Choose model EOS200"
+        },
+        {
+            "name": "Custom Shopify theme",
+            "image": "shopifyTheme",
+            "tech": null,
+            "buttonLabel": "Visit website",
+            "buttonLink": "https://ciscohome.net/"
+        }
+    ]
+}

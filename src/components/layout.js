@@ -8,40 +8,49 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled, { ThemeProvider } from "styled-components";
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const theme = {
+  primary: "#554797",
+  containerWidth: "1080px",
+  mobileBreakpoint: "768px",
+  gutter: "30px",
+  gutterDesktop: "50px",
+  
+}
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+const MainWrapper = styled.div`
+	width: 100%;
+	max-width: ${props => props.theme.containerWidth};
+	margin: 0 auto;
+`
+
+const Layout = ({ children }) => {
+	const data = useStaticQuery(graphql`
+		query {
+		site {
+			siteMetadata {
+			title
+			}
+		}
+		}
+	`)
+
+	return (
+    <ThemeProvider theme={theme}>
+		<Header siteTitle={data.site.siteMetadata.title} />
+			<MainWrapper>
+				<main>{children}</main>
+				<footer>
+					<Footer />
+				</footer>
+			</MainWrapper>
+     </ThemeProvider>
+  	)
 }
 
 Layout.propTypes = {

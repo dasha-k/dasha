@@ -1,0 +1,10 @@
+{
+    "title": "About me",
+    "content": {
+        "paragraph1": "Welcome to my portfolio! I’m Dasha, a Los Angeles-based frontend developer at Small Green Door.",
+     
+        "paragraph2": "There, I focused on building e-commerce sites via Shopify and web apps. I worked collaboratively with the studio’s designers to expertly execute the client’s needs throughout the entirety of the projects.",
+     
+        "paragraph3": "I’m currently a contributor to the expansion of Bitva, an open source game development project that utilizes both React and Electron."
+    }
+}

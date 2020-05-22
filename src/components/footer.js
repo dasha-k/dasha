@@ -17,15 +17,23 @@ const FooterInner = styled.div`
     }
 `
 
+const FooterTitle = styled.div`
+    color: ${props => props.theme.primary};
+    padding: calc(${props => props.theme.gutter} / 2) ${props => props.theme.gutter};
+    text-align: center;
+`
+
 const IconsContainer = styled.div`
     margin: 50px 0 100px 0;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
 `
 
 const Contact = styled.a`
-    margin: 0 30px 0 0;
+    margin: calc(${props => props.theme.gutter} / 2);
     display: inline-block;
 `
 
@@ -36,6 +44,13 @@ const Icon = styled.img`
 
 const Paragraph = styled.p`
     margin: 0 0 30px 0;
+    font-size: 1.1rem;
+    align-self: center;
+    max-width:  ${props => props.theme.mobileBreakpoint};
+
+    @media(min-width: ${props => props.theme.mobileBreakpoint}) {
+        font-size: 1.3rem;
+    }
 `
 
 const contacts = {
@@ -47,23 +62,26 @@ const contacts = {
 
 const Footer = () => {
     return (
-        <FooterInner>
-            <h2>Get in touch</h2>
-            
-            <IconsContainer>
-                <Paragraph>I’m always looking to work on new and exciting projects! Feel free to contact me with any development opportunities.</Paragraph>
-                <div>
-                    {Object.keys(contacts).map(el => {
-                        return (
-                            <Contact key={el} href={contacts[el].link} target="blank">
-                                <Icon src={contacts[el].icon} alt={`${el} icon`} />
-                            </Contact>
-                        )
-                    })}
-                </div>
-            </IconsContainer>
-            © {new Date().getFullYear()}, dashakondratenko
-        </FooterInner>
+        <>
+            <FooterTitle>
+                <h2>Get in touch</h2>
+            </FooterTitle>
+            <FooterInner>
+                <IconsContainer>
+                    <Paragraph>I’m always looking to work on new and exciting projects! Feel free to contact me with any development opportunities.</Paragraph>
+                    <div>
+                        {Object.keys(contacts).map(el => {
+                            return (
+                                <Contact key={el} href={contacts[el].link} target="blank">
+                                    <Icon src={contacts[el].icon} alt={`${el} icon`} />
+                                </Contact>
+                            )
+                        })}
+                    </div>
+                </IconsContainer>
+                © {new Date().getFullYear()}, dashakondratenko
+            </FooterInner>
+        </>
     )
 }
 

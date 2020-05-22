@@ -1,5 +1,5 @@
 {
-    "title": "Latest Projects",
+    "title": "Latest projects",
     "projects": [
         {
             "name": "Shopify app",
@@ -13,8 +13,7 @@
             "image": "cameraSimulator",
             "tech": ["react", "redux"],
             "buttonLabel": "View project",
-            "buttonLink": "https://www.usa.canon.com/internet/portal/us/home/learn/interactive-simulators",
-            "comment": "* Choose model EOS200"
+            "buttonLink": "https://reverent-hamilton-00a188.netlify.app/"
         },
         {
             "name": "Custom Shopify theme",

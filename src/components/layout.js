@@ -29,6 +29,15 @@ const MainWrapper = styled.div`
 	margin: 0 auto;
 `
 
+const FooterWrapper = styled.footer`
+	width: 100%;
+
+	@media(min-width: calc(${props => props.theme.containerWidth} + 60px)) {
+		width: calc(100% - (${props => props.theme.gutter} *2));
+		margin: 0 ${props => props.theme.gutter};
+    }
+`
+
 const Layout = ({ children }) => {
 	const data = useStaticQuery(graphql`
 		query {
@@ -45,10 +54,11 @@ const Layout = ({ children }) => {
 		<Header siteTitle={data.site.siteMetadata.title} />
 			<MainWrapper>
 				<main>{children}</main>
-				<footer>
-					<Footer />
-				</footer>
+				
 			</MainWrapper>
+			<FooterWrapper>
+				<Footer />
+			</FooterWrapper>
      </ThemeProvider>
   	)
 }

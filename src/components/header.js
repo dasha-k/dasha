@@ -7,9 +7,16 @@ const fakeData = {
   siteCaption: 'frontend/UI developer',
 }
 
+const HeaderWrapper = styled.header`
+	width: 100%;
+
+	@media(min-width: calc(${props => props.theme.containerWidth} + 60px)) {
+		width: calc(100% - (${props => props.theme.gutter} *2));
+		margin: 0 ${props => props.theme.gutter};
+	}
+`
+
 const HeaderInner = styled.div`
-	margin: 0px auto;
-	max-width: ${props => props.theme.containerWidth};
 	padding: ${props => props.theme.gutter};
 	text-align: right;
 
@@ -19,14 +26,14 @@ const HeaderInner = styled.div`
 `
 
 const Header = ({ siteTitle }) => (
-  	<header>
+  	<HeaderWrapper>
 		<HeaderInner>
 			<h1 style={{ margin: 0 }}>
         		{fakeData.siteTitle}
      		</h1>
       		<span>{fakeData.siteCaption}</span>
 		</HeaderInner>
-	</header>
+	</HeaderWrapper>
 )
 
 Header.propTypes = {

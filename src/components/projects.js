@@ -66,15 +66,23 @@ const ProjectDescription = styled.div`
         padding: ${props => props.theme.gutter};
     }
 `
+// margin: ${props => props.sectionLeft ? "0 auto 0 0" : "0 0 0 auto"};
 
 const ProjectImage = styled.div`
     width: 100%;
-    margin: ${props => props.sectionLeft ? "0 auto 0 0" : "0 0 0 auto"};
-    padding: ${props => props.theme.gutter};
+    margin: ${props => props.theme.gutter};
+    padding: calc(${props => props.theme.gutter} / 2);
+    box-shadow: 0 0 10px 0 #d2d5d9;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
 
     @media(min-width: ${props => props.theme.mobileBreakpoint}) {
         width: 45%;
+        margin: 0 auto;
+        padding: ${props => props.theme.gutter};
         order: ${props => props.sectionLeft ? "1" : "0"};
+        
     }
 `
 
